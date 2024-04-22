@@ -59,4 +59,10 @@ public class PanelOperaciones extends JPanel{
     
     
     
+    
+    
+    
+    
+    
+    
 }

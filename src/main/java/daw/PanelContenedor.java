@@ -6,6 +6,9 @@ package daw;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -13,7 +16,7 @@ import javax.swing.JTextArea;
  *
  * @author khalid
  */
-public class PanelContenedor extends JPanel{
+public class PanelContenedor extends JPanel implements ActionListener{
     
     private PanelOperaciones operaciones;
     private JTextArea areaTexto;
@@ -39,6 +42,25 @@ public class PanelContenedor extends JPanel{
         //le metemos la parte de visualizacion y operaciones
         this.add(areaTexto,BorderLayout.NORTH);
         this.add(operaciones,BorderLayout.SOUTH);
+        
+        
+        for (JButton boton : this.operaciones.getGrupoBotones()) {
+                boton.addActionListener(this);
+        }
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //obtenemos el objeto que activa el evento
+        Object o = e.getSource();
+        //y si es un boton lo instanciamos
+        if (o instanceof JButton) {
+            System.out.println(((JButton)o).getText());
+            areaTexto.setText(((JButton)o).getText());
+        }
+        
+        
         
         
     }
