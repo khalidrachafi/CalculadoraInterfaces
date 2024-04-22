@@ -60,7 +60,12 @@ public class PanelContenedor extends JPanel implements ActionListener{
             areaTexto.setText(((JButton)o).getText());
         }
         
-        
+        switch (tipoOperacion) {
+            case 1:
+                
+                break;
+
+        }
         
         
     }
