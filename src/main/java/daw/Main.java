@@ -8,7 +8,7 @@ package daw;
  *
  * @author khalid
  */
-public class Tarea4CalculadoraKhalid {
+public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
